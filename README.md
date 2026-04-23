@@ -90,6 +90,9 @@ http://<SERVER_IP>:<HOST_PORT>/
 The home page lists all available products and categories. Products can be
 filtered by category. Product cards link to product detail pages.
 
+A fresh installation does not include preloaded products. Create products and
+categories in the Django admin area before using the shop with real data.
+
 Products and categories are managed through the Django admin area. To add
 products:
 
@@ -195,6 +198,10 @@ Important files and directories:
 - `project_images/`: Example screenshots used for documentation.
 
 ## Screenshots
+
+The screenshots below show the application with example product data. A fresh
+Docker deployment starts with an empty SQLite database; products and categories
+can be added through the Django admin area.
 
 Home page with login:
 
