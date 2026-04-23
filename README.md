@@ -139,10 +139,12 @@ docker run --rm \
 
 ```text
 .
+├── .dockerignore
+├── .gitignore
 ├── Dockerfile
-├── requirements.txt
-├── README.md
 ├── LICENSE
+├── README.md
+├── requirements.txt
 ├── babyshop_app/
 │   ├── manage.py
 │   ├── babyshop/
@@ -151,21 +153,45 @@ docker run --rm \
 │   │   ├── asgi.py
 │   │   └── wsgi.py
 │   ├── products/
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── migrations/
+│   │   ├── models.py
+│   │   ├── tests.py
+│   │   ├── urls.py
+│   │   └── views.py
 │   ├── users/
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── forms.py
+│   │   ├── migrations/
+│   │   ├── models.py
+│   │   ├── tests.py
+│   │   ├── urls.py
+│   │   └── views.py
 │   └── templates/
+│       ├── login.html
+│       ├── product.html
+│       ├── products.html
+│       ├── register.html
+│       └── partoftemp/
 └── project_images/
 ```
 
 Important files and directories:
 
-- `Dockerfile`: Defines the container image and application start command.
-- `.dockerignore`: Excludes local-only files from the Docker build context.
+- `.dockerignore`: Excludes local-only and documentation-only files from the Docker build context.
+- `.gitignore`: Excludes generated files, local databases, media uploads, virtual environments and caches from Git.
+- `Dockerfile`: Defines the container image, exposed port and application start command.
+- `LICENSE`: Contains the repository license.
+- `README.md`: Contains the project documentation, quickstart, usage instructions and repository overview.
 - `requirements.txt`: Lists the Python dependencies.
 - `babyshop_app/manage.py`: Django management entry point.
-- `babyshop_app/babyshop/settings.py`: Django settings and environment variable configuration.
-- `babyshop_app/products/`: Product and category app.
-- `babyshop_app/users/`: User registration and login app.
-- `babyshop_app/templates/`: HTML templates.
+- `babyshop_app/babyshop/`: Django project configuration, URL routing, ASGI and WSGI entry points.
+- `babyshop_app/babyshop/settings.py`: Django settings, database configuration, media configuration and environment variable configuration.
+- `babyshop_app/products/`: Product and category app with models, admin registration, URL routing, views, migrations and tests module.
+- `babyshop_app/users/`: User registration and login app with forms, URL routing, views, migrations and tests module.
+- `babyshop_app/templates/`: HTML templates for product pages, authentication pages and shared template parts.
 - `project_images/`: Example screenshots used for documentation.
 
 ## Screenshots
