@@ -75,6 +75,9 @@ Run the container:
 docker run --rm -p <HOST_PORT>:<CONTAINER_PORT> <IMAGE_NAME>
 ```
 
+The container entrypoint applies database migrations, collects static files and
+starts the application with `gunicorn` as the WSGI server.
+
 Open the application:
 
 ```text
@@ -177,7 +180,8 @@ Important top-level files and directories:
 
 The screenshots below show the application with example product data. A fresh
 Docker deployment starts with an empty SQLite database; products and categories
-can be added through the Django admin area.
+can be added through the Django admin area. Static files for the Django admin
+are collected during container startup and served from inside the container.
 
 Home page with login:
 
