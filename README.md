@@ -1,34 +1,37 @@
 # Baby Tools Shop
 
+Baby Tools Shop is a small Django e-commerce demo application for baby
+products. The project includes product listing and detail pages, category
+filtering, user registration and login, and a Django admin area for managing
+categories and products.
+
 ## Table of Contents
 
 - [Description](#description)
-- [Quickstart](#quickstart)
-- [Docker](#docker)
+- [Prerequisites](#prerequisites)
+- [Quickstart / Installation Instructions](#quickstart--installation-instructions)
 - [Usage](#usage)
 - [Configuration](#configuration)
 - [Repository Structure](#repository-structure)
 - [Screenshots](#screenshots)
+- [License](#license)
 
 ## Description
 
-Baby Tools Shop is a small Django e-commerce demo application for baby products.
-The application contains product categories, product detail pages, user
-registration, user login and a Django admin area for managing products.
+The repository contains the Django application code in `babyshop_app/`, Docker
+configuration for running the project in a container, and example screenshots in
+`project_images/`. The application uses SQLite and stores uploaded product
+images in the Django media directory.
 
-The main project code is located in `babyshop_app/`. The repository also contains
-example screenshots in `project_images/` and Docker configuration for running the
-application in a container.
-
-## Quickstart
-
-Requirements:
+## Prerequisites
 
 - Python 3.9
 - pip
 - Docker, if you want to run the containerized version
 
-Start the app locally without Docker:
+## Quickstart / Installation Instructions
+
+### Run locally without Docker
 
 ```bash
 cd <DJANGO_APP_DIRECTORY>
@@ -40,7 +43,7 @@ python manage.py migrate
 python manage.py runserver <LOCAL_HOST>:<APP_PORT>
 ```
 
-Open the app:
+Open the application:
 
 ```text
 http://<LOCAL_HOST>:<APP_PORT>/
@@ -58,9 +61,9 @@ Open the admin area:
 http://<LOCAL_HOST>:<APP_PORT>/admin/
 ```
 
-## Docker
+### Run with Docker
 
-Build the Docker image:
+Build the image:
 
 ```bash
 docker build -t <IMAGE_NAME> .
@@ -72,14 +75,14 @@ Run the container:
 docker run --rm -p <HOST_PORT>:<CONTAINER_PORT> <IMAGE_NAME>
 ```
 
-Open the app:
+Open the application:
 
 ```text
 http://<LOCAL_HOST>:<HOST_PORT>/
 ```
 
-For a server deployment, expose the configured application port and open the app
-with the server IP:
+For a server deployment, expose the configured application port and open the
+application with the server IP:
 
 ```text
 http://<SERVER_IP>:<HOST_PORT>/
@@ -88,13 +91,12 @@ http://<SERVER_IP>:<HOST_PORT>/
 ## Usage
 
 The home page lists all available products and categories. Products can be
-filtered by category. Product cards link to product detail pages.
+filtered by category, and each product card links to a product detail page.
 
 A fresh installation does not include preloaded products. Create products and
 categories in the Django admin area before using the shop with real data.
 
-Products and categories are managed through the Django admin area. To add
-products:
+To add products:
 
 1. Create a superuser.
 2. Start the application.
@@ -102,7 +104,7 @@ products:
 4. Create categories.
 5. Create products and assign them to categories.
 
-Uploaded product images are stored in the Django media directory:
+Uploaded product images are stored in:
 
 ```text
 babyshop_app/media/
@@ -122,7 +124,7 @@ The application can be configured with environment variables.
 
 | Variable | Default | Description |
 | --- | --- | --- |
-| `PORT` | `<CONTAINER_PORT>` | Port used by the Django development server inside the container |
+| `PORT` | `<CONTAINER_PORT>` | Port used by the WSGI server inside the container |
 | `DJANGO_SECRET_KEY` | `<DJANGO_SECRET_KEY>` | Secret key used by Django |
 | `DJANGO_DEBUG` | `<DJANGO_DEBUG>` | Enables or disables Django debug mode |
 | `DJANGO_ALLOWED_HOSTS` | `<ALLOWED_HOSTS>` | Comma-separated list of allowed hosts |
@@ -147,55 +149,29 @@ docker run --rm \
 ├── Dockerfile
 ├── LICENSE
 ├── README.md
+├── docker-entrypoint.sh
 ├── requirements.txt
 ├── babyshop_app/
-│   ├── manage.py
-│   ├── babyshop/
-│   │   ├── settings.py
-│   │   ├── urls.py
-│   │   ├── asgi.py
-│   │   └── wsgi.py
-│   ├── products/
-│   │   ├── admin.py
-│   │   ├── apps.py
-│   │   ├── migrations/
-│   │   ├── models.py
-│   │   ├── tests.py
-│   │   ├── urls.py
-│   │   └── views.py
-│   ├── users/
-│   │   ├── admin.py
-│   │   ├── apps.py
-│   │   ├── forms.py
-│   │   ├── migrations/
-│   │   ├── models.py
-│   │   ├── tests.py
-│   │   ├── urls.py
-│   │   └── views.py
-│   └── templates/
-│       ├── login.html
-│       ├── product.html
-│       ├── products.html
-│       ├── register.html
-│       └── partoftemp/
 └── project_images/
 ```
 
-Important files and directories:
+Important top-level files and directories:
 
-- `.dockerignore`: Excludes local-only and documentation-only files from the Docker build context.
-- `.gitignore`: Excludes generated files, local databases, media uploads, virtual environments and caches from Git.
-- `Dockerfile`: Defines the container image, exposed port and application start command.
+- `.dockerignore`: Excludes local-only and documentation-only files from the
+  Docker build context.
+- `.gitignore`: Excludes generated files, local databases, media uploads,
+  virtual environments and caches from Git.
+- `Dockerfile`: Defines the container image, exposed port and application start
+  command.
 - `LICENSE`: Contains the repository license.
-- `README.md`: Contains the project documentation, quickstart, usage instructions and repository overview.
+- `README.md`: Contains the project documentation, setup instructions and usage
+  notes.
+- `docker-entrypoint.sh`: Runs the container startup steps and starts the WSGI
+  server.
 - `requirements.txt`: Lists the Python dependencies.
-- `babyshop_app/manage.py`: Django management entry point.
-- `babyshop_app/babyshop/`: Django project configuration, URL routing, ASGI and WSGI entry points.
-- `babyshop_app/babyshop/settings.py`: Django settings, database configuration, media configuration and environment variable configuration.
-- `babyshop_app/products/`: Product and category app with models, admin registration, URL routing, views, migrations and tests module.
-- `babyshop_app/users/`: User registration and login app with forms, URL routing, views, migrations and tests module.
-- `babyshop_app/templates/`: HTML templates for product pages, authentication pages and shared template parts.
-- `project_images/`: Example screenshots used for documentation.
+- `babyshop_app/`: Contains the Django project, apps, templates and management
+  entry point.
+- `project_images/`: Contains example screenshots used in the documentation.
 
 ## Screenshots
 
@@ -226,3 +202,8 @@ Register page:
 Login page:
 
 ![Login page](project_images/capture_20220323081044867.jpg)
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE)
+file for details.
