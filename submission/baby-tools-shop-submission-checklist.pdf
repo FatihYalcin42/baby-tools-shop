@@ -1,0 +1,299 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 2516 >>
+stream
+BT
+/F1 11 Tf
+50 790 Td
+14 TL
+(BABY TOOLS SHOP SUBMISSION CHECKLIST) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Project: `Baby Tools Shop`) Tj
+T*
+(Repository: `https://github.com/FatihYalcin42/baby-tools-shop`) Tj
+T*
+(Pull Request: `https://github.com/FatihYalcin42/baby-tools-shop/pull/1`) Tj
+T*
+(Live App: `http://91.98.162.80:8025/`) Tj
+T*
+(Branch for submission: `feature/project-submission`) Tj
+T*
+() Tj
+T*
+(1. Repository) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Existing files) Tj
+T*
+() Tj
+T*
+(- [x] `.gitignore` exists and ignores irrelevant project files.) Tj
+T*
+(- [x] `Dockerfile` exists and describes the application container image.) Tj
+T*
+(- [x] `README.md` exists and has been restructured to match the required submission format.) Tj
+T*
+(- [x] Top-level repository files and directories are explicitly documented in the README.) Tj
+T*
+() Tj
+T*
+(Dockerfile) Tj
+T*
+() Tj
+T*
+(- [x] A suitable base image is defined: `python:3.9-slim`.) Tj
+T*
+(- [x] A container port is exposed: `8025`.) Tj
+T*
+(- [x] All required setup steps are defined so the application can start without manual) Tj
+T*
+(  setup.) Tj
+T*
+(- [x] Python dependencies are installed during image build.) Tj
+T*
+(- [x] Startup logic is moved into an external entrypoint script: `docker-entrypoint.sh`.) Tj
+T*
+(- [x] The container applies migrations on startup.) Tj
+T*
+(- [x] The container runs `collectstatic` on startup.) Tj
+T*
+(- [x] The application is started with a WSGI server \(`gunicorn`\), not with Django) Tj
+T*
+(  `runserver`.) Tj
+T*
+() Tj
+T*
+(README.md) Tj
+T*
+() Tj
+T*
+(- [x] The README contains a Table of Contents.) Tj
+T*
+(- [x] The README contains a short repository description near the top.) Tj
+T*
+(- [x] The README contains a dedicated `Prerequisites` section.) Tj
+T*
+(- [x] The README contains a `Quickstart / Installation Instructions` section near the top.) Tj
+T*
+(- [x] The README contains a more detailed `Usage` section.) Tj
+T*
+(- [x] The README contains a complete `Configuration` section with documented environment) Tj
+T*
+(  variables.) Tj
+T*
+(- [x] The README explains that Docker startup runs migrations, collects static files and) Tj
+T*
+(  starts `gunicorn`.) Tj
+T*
+(- [x] The README documents the top-level repository structure only, as requested in the) Tj
+T*
+(  review.) Tj
+T*
+() Tj
+T*
+(2. Documentation) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(- [x] Project documentation is provided in `README.md`.) Tj
+T*
+(- [x] The documentation language is English.) Tj
+T*
+(- [x] The README was updated to follow the structure requested in the Developer Academy FAQ) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 2242 >>
+stream
+BT
+/F1 11 Tf
+50 790 Td
+14 TL
+(  and in the review feedback.) Tj
+T*
+() Tj
+T*
+(3. Notes) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Submission items) Tj
+T*
+() Tj
+T*
+(- [x] Repository link is available.) Tj
+T*
+(- [x] Pull request link is available.) Tj
+T*
+(- [x] The pull request targets a branch in the student's own repository, not the Developer) Tj
+T*
+(  Akademie repository.) Tj
+T*
+(- [x] Live app link on the VM is available.) Tj
+T*
+(- [x] A filled checklist document has been created for the resubmission.) Tj
+T*
+(- [ ] Loom video is not included in this resubmission package.) Tj
+T*
+() Tj
+T*
+(Security notes) Tj
+T*
+() Tj
+T*
+(- [x] No SSH keys are stored inside the repository workspace.) Tj
+T*
+(- [x] No passwords, tokens or usernames are hardcoded in the repository code.) Tj
+T*
+(- [x] Environment variables are used for runtime configuration.) Tj
+T*
+(- [x] No sensitive IP or secret values are stored in the codebase.) Tj
+T*
+() Tj
+T*
+(Code conventions) Tj
+T*
+() Tj
+T*
+(- [x] Environment variable names use `UPPER_CASE_WITH_UNDERSCORE`.) Tj
+T*
+(- [x] Variable references use `${...}` notation where applicable, for example `${PORT}` in) Tj
+T*
+(  the entrypoint script.) Tj
+T*
+(- [x] Default values are configured only where they make sense, for example `PORT=8025`.) Tj
+T*
+(- [x] Critical configuration values are expected to be passed through environment variables.) Tj
+T*
+() Tj
+T*
+(4. Testing) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(- [x] The project was started locally before and during containerization work.) Tj
+T*
+(- [x] Docker image build was tested successfully.) Tj
+T*
+(- [x] Container startup on port `8025` was tested successfully.) Tj
+T*
+(- [x] The application responds on `http://127.0.0.1:8025/`.) Tj
+T*
+(- [x] The application responds on `http://91.98.162.80:8025/`.) Tj
+T*
+(- [x] Django admin static files are served correctly in Docker via WhiteNoise.) Tj
+T*
+(- [x] Admin login page styling was verified after static file handling was fixed.) Tj
+T*
+(- [x] Sample categories and products were added manually in the admin interface.) Tj
+T*
+() Tj
+T*
+(Manual content added for verification) Tj
+T*
+() Tj
+T*
+(- [x] `Elma`) Tj
+T*
+(- [x] `Muz`) Tj
+T*
+(- [x] `Brokoli`) Tj
+T*
+(- [x] `Patl?can`) Tj
+T*
+() Tj
+T*
+(5. Review-specific fixes) Tj
+T*
+() Tj
+T*
+() Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 864 >>
+stream
+BT
+/F1 11 Tf
+50 790 Td
+14 TL
+(- [x] Submission workflow changed from direct work on `main` to a dedicated feature branch.) Tj
+T*
+(- [x] Pull request created from `feature/project-submission` into `main` in the student's) Tj
+T*
+(  own fork.) Tj
+T*
+(- [x] README restructured to include description, prerequisites and quickstart in the) Tj
+T*
+(  expected order.) Tj
+T*
+(- [x] Docker startup changed from Django development server to WSGI server startup.) Tj
+T*
+(- [x] Startup command moved out of the Docker `CMD` shell command into an external script.) Tj
+T*
+(- [x] Static file delivery in Docker was fixed so the Django admin is rendered correctly.) Tj
+T*
+() Tj
+T*
+(Final note) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(This checklist reflects the current resubmission state of the repository and the) Tj
+T*
+(manual verification steps completed during the final review pass.) Tj
+ET
+endstream
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000127 00000 n 
+0000000197 00000 n 
+0000000323 00000 n 
+0000002891 00000 n 
+0000003017 00000 n 
+0000005311 00000 n 
+0000005437 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+6352
+%%EOF
